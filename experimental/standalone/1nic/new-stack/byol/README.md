@@ -28,7 +28,7 @@ For information on getting started using F5's ARM templates on GitHub, see [Micr
 ## Prerequisites
 
 - **Important**: When you configure the admin password for the BIG-IP VE in the template, you cannot use the character **#**.  Additionally, there are a number of other special characters that you should avoid using for F5 product user accounts.  See [K2873](https://support.f5.com/csp/article/K2873) for details.
-- This template requires the BIG-IP VE image(s) to be available in your Azure Stack environment.  The images can be added from the Azure marketplace, see the instuctions [here](http://clouddocs.f5.com/cloud/public/v1/azure/Azure_stack.html).
+- This template requires the BIG-IP VE image(s) to be available in your Azure Stack environment.  The images can be added from the Azure marketplace, see the instructions [here](http://clouddocs.f5.com/cloud/public/v1/azure/Azure_stack.html).
 - This template requires the *Custom Script for Linux 2.0* extension.  The custom script extension can be added from the Azure marketplace, see the Azure documentation [here](https://docs.microsoft.com/en-us/azure/azure-stack/asdk/asdk-marketplace-item) for more information.
 - Since you are deploying the BYOL template, you must have a valid BIG-IP license token.
 
@@ -45,6 +45,7 @@ For information on getting started using F5's ARM templates on GitHub, see [Micr
 - F5 ARM templates now capture all deployment logs to the BIG-IP VE in **/var/log/cloud/azure**.  Depending on which template you are using, this includes deployment logs (stdout/stderr), f5-cloud-libs execution logs, recurring solution logs (failover, metrics, and so on), and more.
 - Supported F5 ARM templates do not reconfigure existing Azure resources, such as network security groups.  Depending on your configuration, you may need to configure these resources to allow the BIG-IP VE(s) to receive traffic for your application.  Similarly, templates that deploy Azure load balancer(s) do not configure load balancing rules or probes on those resources to forward external traffic to the BIG-IP(s).  You must create these resources after the deployment has succeeded.
 - See the **[Configuration Example](#configuration-example)** section for a configuration diagram and description for this solution.
+- **NEW:**  Beginning with release 1.1.0.0, the BIG-IP image names have changed (previous options were Good, Better, and Best).  Now you choose a BIG-IP VE image based on whether you need [LTM](https://www.f5.com/products/big-ip-services/local-traffic-manager) only (name starts with **LTM**) or All modules (image name starts with **All**) available (including [WAF](https://www.f5.com/products/security/advanced-waf), [AFM](https://www.f5.com/products/security/advanced-firewall-manager), etc.), and if you need 1 or 2 boot locations.  Use 2 boot locations if you expect to upgrade the BIG-IP VE in the future. If you do not need room to upgrade (if you intend to create a new instance when a new version of BIG-IP VE is released), use an image with 1 boot location.  See this [Matrix](https://clouddocs.f5.com/cloud/public/v1/matrix.html#microsoft-azure) for recommended Azure instance types.
 
 ## Security
 
@@ -63,7 +64,7 @@ The following is a map that shows the available options for the template paramet
 
 | Azure BIG-IP Image Version | BIG-IP Version |
 | --- | --- |
-| 13.1.0200 | 13.1.0 Build 0.0.6 |
+| 13.1.100000 | 13.1.1 Build 0.0.4 |
 | 12.1.303000 | 12.1.3.3 Build 0.0.1 |
 | latest | This will select the latest BIG-IP version available |
 
@@ -95,7 +96,7 @@ Use the appropriate button below to deploy:
 
 - **BYOL** (bring your own license): This allows you to use an existing BIG-IP license.
 
-  [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-arm-templates%2Fv1.0.0.0.%2Fenvironments%2Fazure-stack%2Fexperimental%2Fstandalone%2F1nic%2Fnew-stack%2Fbyol%2Fazuredeploy.json)
+  [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-arm-templates%2Fv1.1.0.0.%2Fenvironments%2Fazure-stack%2Fexperimental%2Fstandalone%2F1nic%2Fnew-stack%2Fbyol%2Fazuredeploy.json)
 
 ### Template parameters
 
@@ -107,7 +108,7 @@ Use the appropriate button below to deploy:
 | dnsLabel | Yes | Unique DNS Name for the Public IP address used to access the Virtual Machine. |
 | instanceName | Yes | Name of the Virtual Machine. |
 | instanceType | Yes | Instance size of the Virtual Machine. |
-| imageName | Yes | F5 SKU (image) to you want to deploy. Note: The disk size of the VM will be determined based on the option you select.  **Important**: If intending to provision multiple modules, ensure the appropriate value is selected, such as **Best** instead of **Good**. |
+| imageName | Yes | F5 SKU (image) to you want to deploy. Note: The disk size of the VM will be determined based on the option you select.  **Important**: If intending to provision multiple modules, ensure the appropriate value is selected, such as ****AllTwoBootLocations or AllOneBootLocation****. |
 | bigIpVersion | Yes | F5 BIG-IP version you want to use. |
 | licenseKey1 | Yes | The license token for the F5 BIG-IP VE (BYOL). |
 | vnetAddressPrefix | Yes | The start of the CIDR block the BIG-IP VEs use when creating the Vnet and subnets.  You MUST type just the first two octets of the /16 virtual network that will be created, for example '10.0', '10.100', 192.168'. |
@@ -125,7 +126,7 @@ As an alternative to deploying through the Azure Portal (GUI) each solution prov
 #### PowerShell Script Example
 
 ```powershell
-## Example Command: .\Deploy_via_PS.ps1 -adminUsername azureuser -authenticationType password -adminPasswordOrKey <value> -dnsLabel <value> -instanceName f5vm01 -instanceType Standard_DS2_v2 -imageName Best -bigIpVersion 13.1.0200 -licenseKey1 <value> -vnetAddressPrefix 10.0 -ntpServer 0.pool.ntp.org -timeZone UTC -customImage OPTIONAL -allowUsageAnalytics Yes -resourceGroupName <value>
+## Example Command: .\Deploy_via_PS.ps1 -adminUsername azureuser -authenticationType password -adminPasswordOrKey <value> -dnsLabel <value> -instanceName f5vm01 -instanceType Standard_DS2_v2 -imageName AllTwoBootLocations -bigIpVersion 13.1.100000 -licenseKey1 <value> -vnetAddressPrefix 10.0 -ntpServer 0.pool.ntp.org -timeZone UTC -customImage OPTIONAL -allowUsageAnalytics Yes -resourceGroupName <value>
 ```
 
 =======
@@ -133,7 +134,7 @@ As an alternative to deploying through the Azure Portal (GUI) each solution prov
 #### Azure CLI (1.0) Script Example
 
 ```bash
-## Example Command: ./deploy_via_bash.sh --adminUsername azureuser --authenticationType password --adminPasswordOrKey <value> --dnsLabel <value> --instanceName f5vm01 --instanceType Standard_DS2_v2 --imageName Best --bigIpVersion 13.1.0200 --licenseKey1 <value> --vnetAddressPrefix 10.0 --ntpServer 0.pool.ntp.org --timeZone UTC --customImage OPTIONAL --allowUsageAnalytics Yes --resourceGroupName <value> --azureLoginUser <value> --azureLoginPassword <value>
+## Example Command: ./deploy_via_bash.sh --adminUsername azureuser --authenticationType password --adminPasswordOrKey <value> --dnsLabel <value> --instanceName f5vm01 --instanceType Standard_DS2_v2 --imageName AllTwoBootLocations --bigIpVersion 13.1.100000 --licenseKey1 <value> --vnetAddressPrefix 10.0 --ntpServer 0.pool.ntp.org --timeZone UTC --customImage OPTIONAL --allowUsageAnalytics Yes --resourceGroupName <value> --azureLoginUser <value> --azureLoginPassword <value>
 ```
 
 ## Configuration Example
