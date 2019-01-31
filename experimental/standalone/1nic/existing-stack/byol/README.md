@@ -86,17 +86,12 @@ We encourage you to use our [Slack channel](https://f5cloudsolutions.herokuapp.c
 
 You have three options for deploying this solution:
 
-- Using the Azure deploy buttons
+- Import the template using Azure Stack portal:
+  - Create a resource
+    - Template deployment (type in name of the service "template deployment")
+      - copy and paste template into the edit template section
 - Using [PowerShell](#powershell-script-example)
 - Using [CLI Tools](#azure-cli-10-script-example)
-
-### Azure deploy buttons
-
-Use the appropriate button below to deploy:
-
-- **BYOL** (bring your own license): This allows you to use an existing BIG-IP license.
-
-  [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-arm-templates%2Fv1.1.0.0.%2Fenvironments%2Fazure-stack%2Fexperimental%2Fstandalone%2F1nic%2Fexisting-stack%2Fbyol%2Fazuredeploy.json)
 
 ### Template parameters
 

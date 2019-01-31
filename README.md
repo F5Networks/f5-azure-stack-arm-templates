@@ -34,16 +34,8 @@ Note that many of the solutions now include *Production Stack* templates.  This 
 
 - **Deploying the BIG-IP VE in Azure Stack - Single NIC**
   - [New Networking Stack](https://github.com/F5Networks/f5-azure-stack-arm-templates/tree/master/experimental/standalone/1nic/new-stack)
-    - *BYOL* <br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-stack-arm-templates%2Fmaster%2Fexperimental%2Fstandalone%2F1nic%2Fnew-stack%2Fbyol%2Fazuredeploy.json">  <img src="http://azuredeploy.net/deploybutton.png"/></a><br>
-      - *Using BIG-IQ for Licensing* <br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-stack-arm-templates%2Fmaster%2Fexperimental%2Fstandalone%2F1nic%2Fnew-stack%2Fbigiq%2Fazuredeploy.json">  <img src="http://azuredeploy.net/deploybutton.png"/></a>
-
   - [Existing Networking Stack](https://github.com/F5Networks/f5-azure-stack-arm-templates/tree/master/experimental/standalone/1nic/existing-stack)
-    - *BYOL* <br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-stack-arm-templates%2Fmaster%2Fexperimental%2Fstandalone%2F1nic%2Fexisting-stack%2Fbyol%2Fazuredeploy.json">  <img src="http://azuredeploy.net/deploybutton.png"/></a><br>
-    - *Using BIG-IQ for Licensing* <br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-stack-arm-templates%2Fmaster%2Fexperimental%2Fstandalone%2F1nic%2Fexisting-stack%2Fbigiq%2Fazuredeploy.json">  <img src="http://azuredeploy.net/deploybutton.png"/></a>
-
   - [Production Networking Stack](https://github.com/F5Networks/f5-azure-arm-templates/tree/master/experimental/standalone/1nic/production-stack)
-    - *BYOL* <br><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-stack-arm-templates%2Fmaster%2Fexperimental%2Fstandalone%2F1nic%2Fproduction-stack%2Fbyol%2Fazuredeploy.json">  <img src="http://azuredeploy.net/deploybutton.png"/></a><br>
-
 ---
 
 ### Copyright
