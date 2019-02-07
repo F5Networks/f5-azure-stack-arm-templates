@@ -32,10 +32,6 @@ Note that many of the solutions now include *Production Stack* templates.  This 
 
 **In this release, all of the following templates are Experimental**
 
-- **Deploying the BIG-IP VE in Azure Stack - Single NIC**
-  - [New Networking Stack](https://github.com/F5Networks/f5-azure-stack-arm-templates/tree/master/experimental/standalone/1nic/new-stack)
-  - [Existing Networking Stack](https://github.com/F5Networks/f5-azure-stack-arm-templates/tree/master/experimental/standalone/1nic/existing-stack)
-  - [Production Networking Stack](https://github.com/F5Networks/f5-azure-arm-templates/tree/master/experimental/standalone/1nic/production-stack)
 ---
 
 ### Copyright
