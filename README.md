@@ -23,20 +23,19 @@ For additional information, including how the templates are generated, and assis
 
 ### Matrix for tagged releases
 
-F5 has created a matrix that contains all of the tagged releases of the F5 ARM templates for Microsoft Azure Stack and the corresponding BIG-IP versions, license types and throughputs available for a specific tagged release. See matrix [here](https://github.com/F5Networks/f5-azure-stack-arm-templates/blob/master/azure-bigip-version-matrix.md).
+F5 has created a matrix that contains all of the tagged releases of the F5 ARM templates for Microsoft Azure Stack and the corresponding BIG-IP versions, license types and throughput levels available for a specific tagged release. See matrix [here](https://github.com/F5Networks/f5-azure-stack-arm-templates/blob/master/azure-bigip-version-matrix.md).
 
 ## List of F5 ARM templates for Azure Stack deployments
 
-The following is a list of the current F5 ARM templates.
 Note that many of the solutions now include *Production Stack* templates.  This means that the templates deploy without creating or attaching any public IP addresses to the BIG-IP VEs, see the individual README files for more information.
 
-**In this release, all of the following templates are Experimental**
+**In this release, all of the templates are Experimental**
 
 ---
 
 ### Copyright
 
-Copyright 2014-2018 F5 Networks Inc.
+Copyright2014-2019 F5 Networks Inc.
 
 ### License
 
