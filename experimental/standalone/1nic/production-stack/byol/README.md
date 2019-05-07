@@ -68,8 +68,8 @@ The following is a map that shows the available options for the template paramet
 
 | Azure BIG-IP Image Version | BIG-IP Version | Important: Boot location options note |
 | --- | --- | --- |
+| 14.1.003000 | No Value | No Value |
 | 13.1.100000 | 13.1.1 Build 0.0.4 | Both One and Two Boot Location options are available |
-| 12.1.303000 | 12.1.3.3 Build 0.0.1 | Only Two Boot Location options exist. Even if you select a One Boot Location in the template, Two Boot Locations are created |
 | latest | This will select the latest BIG-IP version available | Only Two Boot Location options exist. Even if you select a One Boot Location in the template, Two Boot Locations are created |
 
 ## Supported instance types and hypervisors
@@ -100,7 +100,7 @@ Use the appropriate button below to deploy:
 
 - **BYOL** (bring your own license): This allows you to use an existing BIG-IP license.
 
-  [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-arm-templates%2Fv1.1.3.0%2F%2Ff5-azure-stack-arm-templates%2Fexperimental%2Fstandalone%2F1nic%2Fproduction-stack%2Fbyol%2Fazuredeploy.json)
+  [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FF5Networks%2Ff5-azure-arm-templates%2Fv1.2.0.0%2F%2Ff5-azure-stack-arm-templates%2Fexperimental%2Fstandalone%2F1nic%2Fproduction-stack%2Fbyol%2Fazuredeploy.json)
 
 ### Template parameters
 
@@ -135,7 +135,7 @@ As an alternative to deploying through the Azure Portal (GUI) each solution prov
 #### PowerShell Script Example
 
 ```powershell
-## Example Command: .\Deploy_via_PS.ps1 -adminUsername azureuser -authenticationType password -adminPasswordOrKey <value> -uniqueLabel <value> -instanceName f5vm01 -instanceType Standard_DS2_v2 -imageName AllTwoBootLocations -bigIpVersion 13.1.100000 -licenseKey1 <value> -vnetName <value> -vnetResourceGroupName <value> -mgmtSubnetName <value> -mgmtIpAddress <value> -avSetChoice CREATE_NEW -declarationUrl NOT_SPECIFIED -ntpServer 0.pool.ntp.org -timeZone UTC -customImage OPTIONAL -allowUsageAnalytics Yes -resourceGroupName <value>
+## Example Command: .\Deploy_via_PS.ps1 -adminUsername azureuser -authenticationType password -adminPasswordOrKey <value> -uniqueLabel <value> -instanceName f5vm01 -instanceType Standard_DS2_v2 -imageName AllTwoBootLocations -bigIpVersion 14.1.003000 -licenseKey1 <value> -vnetName <value> -vnetResourceGroupName <value> -mgmtSubnetName <value> -mgmtIpAddress <value> -avSetChoice CREATE_NEW -declarationUrl NOT_SPECIFIED -ntpServer 0.pool.ntp.org -timeZone UTC -customImage OPTIONAL -allowUsageAnalytics Yes -resourceGroupName <value>
 ```
 
 =======
@@ -143,7 +143,7 @@ As an alternative to deploying through the Azure Portal (GUI) each solution prov
 #### Azure CLI (1.0) Script Example
 
 ```bash
-## Example Command: ./deploy_via_bash.sh --adminUsername azureuser --authenticationType password --adminPasswordOrKey <value> --uniqueLabel <value> --instanceName f5vm01 --instanceType Standard_DS2_v2 --imageName AllTwoBootLocations --bigIpVersion 13.1.100000 --licenseKey1 <value> --vnetName <value> --vnetResourceGroupName <value> --mgmtSubnetName <value> --mgmtIpAddress <value> --avSetChoice CREATE_NEW --declarationUrl NOT_SPECIFIED --ntpServer 0.pool.ntp.org --timeZone UTC --customImage OPTIONAL --allowUsageAnalytics Yes --resourceGroupName <value> --azureLoginUser <value> --azureLoginPassword <value>
+## Example Command: ./deploy_via_bash.sh --adminUsername azureuser --authenticationType password --adminPasswordOrKey <value> --uniqueLabel <value> --instanceName f5vm01 --instanceType Standard_DS2_v2 --imageName AllTwoBootLocations --bigIpVersion 14.1.003000 --licenseKey1 <value> --vnetName <value> --vnetResourceGroupName <value> --mgmtSubnetName <value> --mgmtIpAddress <value> --avSetChoice CREATE_NEW --declarationUrl NOT_SPECIFIED --ntpServer 0.pool.ntp.org --timeZone UTC --customImage OPTIONAL --allowUsageAnalytics Yes --resourceGroupName <value> --azureLoginUser <value> --azureLoginPassword <value>
 ```
 
 ## Configuration Example
